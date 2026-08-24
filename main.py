@@ -7,10 +7,10 @@ from analyzer import(
     count_bases,
     gc_content,
     reverse_complement
-)#针对序列本身操作的模块
+)# Sequence analysis functions
 
 def plot_base_counts(count):
-    x = list(count.keys()) #list转为普通列表
+    x = list(count.keys()) # Convert to a standard Python list
     y = list(count.values())
 
     plt.bar(x, y)
@@ -21,7 +21,7 @@ def plot_base_counts(count):
     plt.show()
 
 def main():
-    #读取FASTA+工程化
+    # Read FASTA file
     try:
         record = SeqIO.read("data/example.fasta", "fasta")
     except FileNotFoundError:
@@ -32,7 +32,8 @@ def main():
         exit()
 
     sequence = str(record.seq).upper()
-
+    if not sequence:
+        raise ValueError("DNA sequence is empty.")
     if not validate_sequence(sequence):
         raise ValueError("Invalid DNA sequence. Only A, T, C and G are allowed.")
     #print("Is the sequence legal? ", validate_sequence(sequence))
@@ -42,15 +43,15 @@ def main():
     print("GC Content:", round(gc_content(sequence) * 100, 2), "%")
     print("Reverse Complement:", reverse_complement(sequence))
 
-    #生物学转换
+    # Biological conversion
     dna = Seq(sequence)
     print("DNA:", dna)
     rna = dna.transcribe()
     print("RNA:", rna)
-    protein = rna.translate() #translate(to_stop = True)可以在第一个终止密码子前停下
+    protein = rna.translate() #translate(to_stop = True) stops translation before the first stop codon
     print("Protein:", protein)
 
-    #绘图
+    # Visualization
     base_counts = count_bases(sequence)
     plot_base_counts(base_counts)
 

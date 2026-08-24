@@ -1,7 +1,4 @@
-def validate_sequence(seq): #无对应函数
-    if not seq:
-        return False
-    
+def validate_sequence(seq): #
     valid_bases = {"A", "T", "C", "G"}
     for base in seq:
         if base not in valid_bases:
@@ -9,7 +6,7 @@ def validate_sequence(seq): #无对应函数
     return True
 
 def count_bases(seq):#sequence.count("A")
-    #建立一个字典
+    #nitialize a dictionary
     counts = {
         "A": 0,
         "T": 0,
@@ -33,6 +30,6 @@ def reverse_complement(seq):#sequence.reverse_complement()
         "G": "C"
     }
     result = ""
-    for base in reversed(seq):#reversed()函数返回的是反向的下标（迭代器）
+    for base in reversed(seq):# reversed() returns an iterator over the sequence in reverse order
         result += complement[base]
     return result
