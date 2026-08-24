@@ -1,4 +1,4 @@
-def validate_sequence(seq): #
+def validate_sequence(seq):
     valid_bases = {"A", "T", "C", "G"}
     for base in seq:
         if base not in valid_bases:
@@ -6,7 +6,7 @@ def validate_sequence(seq): #
     return True
 
 def count_bases(seq):#sequence.count("A")
-    #nitialize a dictionary
+    #Initialize a dictionary
     counts = {
         "A": 0,
         "T": 0,

@@ -93,8 +93,9 @@ BioSeq-Starter/
 创建虚拟环境：
 
 ```bash
-python -m venv .venv
+py -3.13 -m venv .venv
 ```
+如果系统默认的 python 已经指向 Python 3.13，也可以使用 ```python -m venv .venv```。
 
 Windows PowerShell 中激活：
 
@@ -658,7 +659,7 @@ cd BioSeq-Starter
 创建虚拟环境：
 
 ```bash
-python -m venv .venv
+py -3.13 -m venv .venv
 ```
 
 Windows PowerShell 激活：

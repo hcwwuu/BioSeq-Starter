@@ -2,7 +2,7 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 import matplotlib.pyplot as plt
 
-from analyzer import(
+from analyzer import (
     validate_sequence,
     count_bases,
     gc_content,
@@ -25,7 +25,7 @@ def main():
     try:
         record = SeqIO.read("data/example.fasta", "fasta")
     except FileNotFoundError:
-        print("Error:FASTA file not found")
+        print("Error: FASTA file not found")
         exit()
     except ValueError as error:
         print("Error:", error)

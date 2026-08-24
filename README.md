@@ -88,8 +88,9 @@ BioSeq-Starter/
 Create a virtual environment:
 
 ```bash
-python -m venv .venv
+py -3.13 -m venv .venv
 ```
+If Python 3.13 is already your default interpreter, ```python -m venv .venv``` also works.
 
 Activate it in Windows PowerShell:
 
@@ -625,7 +626,7 @@ cd BioSeq-Starter
 Create a virtual environment:
 
 ```bash
-python -m venv .venv
+py -3.13 -m venv .venv
 ```
 
 Activate it on Windows PowerShell:
