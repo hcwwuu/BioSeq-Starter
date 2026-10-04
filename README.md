@@ -14,7 +14,7 @@ Instead of learning Python syntax, bioinformatics libraries, data formats, and s
 
 ---
 
-## What You Will Learn
+## What You Will learning
 
 By completing the project step by step, you will practice:
 
